@@ -349,7 +349,7 @@
               <h4>Web Application</h4>
               <p>Aplikasi Catatan</p>
               <div class="portfolio-links">
-                <a href="https://github.com/SyalomielePratama/AplikasiCatatan.git" target="_blank"><i
+                <a href="https://syalomielepratama.github.io/AplikasiCatatan/" target="_blank"><i
                     class="bx bx-link"></i></a>
               </div>
             </div>
@@ -363,7 +363,7 @@
               <h4>Web Application</h4>
               <p>Aplikasi Cuaca</p>
               <div class="portfolio-links">
-                <a href="https://github.com/SyalomielePratama/AplikasiCuaca.git" target="_blank"><i
+                <a href="https://syalomielepratama.github.io/AplikasiCuaca/" target="_blank"><i
                     class="bx bx-link"></i></a>
               </div>
             </div>
@@ -377,8 +377,8 @@
               <h4>Graphic Standard Manual</h4>
               <p>250 SecondShop</p>
               <div class="portfolio-links">
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
-                  class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                <a href="https://online.fliphtml5.com/lyspe/nvtb/"
+                  target="_blank"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -490,8 +490,12 @@
         </div>
       </div>
 
-      <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
+      <form class="php-email-form mt-4" name="submit-to-google-sheet">
         <div class="row">
+          <div class="alert alert-success alert-dismissible fade show d-none btn-alert" role="alert">
+            <strong>Terimakasih !!</strong> Pesan Anda Sudah Saya Terima.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
           <div class="col-md-6 form-group">
             <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required />
           </div>
@@ -505,15 +509,19 @@
         <div class="form-group mt-3">
           <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
         </div>
-        <div class="my-3">
+        <!-- <div class="my-3">
           <div class="loading">Loading</div>
           <div class="error-message"></div>
           <div class="sent-message">
             Your message has been sent. Thank you!
           </div>
-        </div>
-        <div class="text-center">
-          <button type="submit">Send Message</button>
+        </div> -->
+        <div class="text-center my-3">
+          <button class="btn-kirim" type="submit">Send Message</button>
+          <button class="btn btn-success btn-loading d-none" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+            <span role="status">Loading...</span>
+          </button>
         </div>
       </form>
     </div>
@@ -527,7 +535,6 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>

@@ -251,3 +251,28 @@
    */
   new PureCounter();
 })();
+
+
+// Contact Form
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyAk63h90y63-EXVGiQ7XTqCY83lJ8jCkcl0aFSJAquL_Fj1n_hOrsiqEbeXMzDnkR4Vg/exec'
+const form = document.forms['submit-to-google-sheet']
+const btnKirim = document.querySelector('.btn-kirim')
+const btnLoad = document.querySelector('.btn-loading')
+const btnAlert = document.querySelector('.btn-alert')
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+
+  btnLoad.classList.toggle('d-none')
+  btnKirim.classList.toggle('d-none')
+
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+      btnLoad.classList.toggle('d-none')
+      btnKirim.classList.toggle('d-none')
+      btnAlert.classList.toggle('d-none')
+      form.reset()
+      console.log('Success!', response)
+    })
+    .catch(error => console.error('Error!', error.message))
+});
